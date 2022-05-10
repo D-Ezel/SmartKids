@@ -37,6 +37,8 @@ public class LoginFragment extends Fragment {
          return  view;
     }
 
+    
+
     private void loadAnimation(View view){
         // Animation tv_title TextView
         tvTitle = (TextView) view.findViewById(R.id.tv_title);
