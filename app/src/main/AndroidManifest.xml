@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartKid">
         <activity
-            android:name="com.smartkid.dd.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main" />
         <activity

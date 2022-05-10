@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
-        navView.menu.findItem(R.id.navigation_home).setTitle("Yes")
+        navView.menu.findItem(R.id.navigation_dashboard).title = "Categories"
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each

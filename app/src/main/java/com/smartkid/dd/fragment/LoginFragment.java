@@ -1,6 +1,7 @@
 package com.smartkid.dd.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -34,10 +35,22 @@ public class LoginFragment extends Fragment {
             // Inflate the layout for this fragment
             View view = inflater.inflate(R.layout.fragment_login, container, false);
             this.loadAnimation(view);
+            this.btnLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    login(v);
+                }
+            });
          return  view;
     }
 
-    
+    public void login(View v) {
+        Intent myIntent = new Intent();
+        myIntent.setClassName("com.smartkid.dd", "com.smartkid.dd.activity.MainActivity");
+        // for ex: your package name can be "com.example"
+        // your activity name will be "com.example.Contact_Developer"
+        startActivity(myIntent);
+    }
 
     private void loadAnimation(View view){
         // Animation tv_title TextView
