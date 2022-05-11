@@ -10,4 +10,8 @@
     <color name="colorPrimary">#00796b</color>
     <color name="colorPrimaryDark">#00695C</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="navigationBackground">#DADEFF</color>
+    <color name="defaultGray">#8C8C8C</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
