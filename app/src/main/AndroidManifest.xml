@@ -11,7 +11,8 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="false"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.Main"/>
         <activity
             android:name=".activity.AuthActivity"
             android:exported="false"
