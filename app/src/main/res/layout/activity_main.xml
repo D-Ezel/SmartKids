@@ -16,6 +16,7 @@
         android:background="@drawable/rounded_corner"
         android:layout_margin="30dp"
         android:elevation="3dp"
+        app:backgroundTint="@color/transparent"
         app:itemRippleColor="@android:color/transparent"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selector"
