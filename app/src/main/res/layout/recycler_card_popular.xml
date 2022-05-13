@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  style="@style/Widget.Neumorph.CardView"
+  android:layout_width="match_parent"
+  android:layout_height="150dp"
+  android:id="@+id/popular_card"
+  android:layout_margin="5dp"
+ >
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/popular_card_container">
+    <RelativeLayout
+      android:layout_width="140dp"
+      android:layout_height="match_parent">
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_dashboard_black_24dp"
+        android:id="@+id/card_img"
+        />
+    </RelativeLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textColor="@color/textColorBtnHome"
+        android:textStyle="bold"
+        android:text="Hansell and Gretel"
+        android:id="@+id/card_title"/>
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="18dp"
+        android:text="everything is black and white and you are right or wrong"
+        android:id="@+id/card_description"/>
+    </LinearLayout>
+
+  </LinearLayout>
+
+</soup.neumorphism.NeumorphCardView>
