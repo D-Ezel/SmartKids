@@ -3,7 +3,7 @@ package com.smartkid.dd.activity.ui.home.helper
 class PopularHelper {
     private var img: Int
     private var title: String?
-    private var description: String?
+    private var rating: Float
 
     fun getImg(): Int {
         return this.img;
@@ -21,17 +21,17 @@ class PopularHelper {
         this.title = value
     }
 
-    fun getDescription(): String? {
-        return this.description;
+    fun getRating(): Float {
+        return this.rating;
     }
 
-    fun setDescription(value: String?) {
-        this.description = value
+    fun setRatingn(value: Float) {
+        this.rating = value
     }
 
-    constructor(img: Int, title: String?, description: String?) {
+    constructor(img: Int, title: String?, rating: Float) {
         this.img = img
         this.title = title
-        this.description = description
+        this.rating = rating
     }
 }

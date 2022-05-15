@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +26,7 @@ class PopularAdapter constructor(private var popularCardList: ArrayList<PopularH
         val popularCardHelper: PopularHelper = popularCardList!![position]
         popularCardHelper.getImg()?.let { holder.img.setImageResource(it) }
         holder.title.setText(popularCardHelper.getTitle())
-        holder.description.text = popularCardHelper.getDescription()
+        holder.rating.rating = popularCardHelper.getRating()
     }
 
     override fun getItemCount(): Int {
@@ -40,7 +41,7 @@ class PopularAdapter constructor(private var popularCardList: ArrayList<PopularH
         View.OnClickListener {
         var img: ImageView
         var title: TextView
-        var description: TextView
+        var rating: RatingBar
         override fun onClick(v: View?) {
             val clickedPosition = adapterPosition
             val mOnClickListener: ListItemClickListener? = null
@@ -52,7 +53,7 @@ class PopularAdapter constructor(private var popularCardList: ArrayList<PopularH
             //hooks
             img = itemView.findViewById(R.id.card_img)
             title = itemView.findViewById(R.id.card_title)
-            description = itemView.findViewById(R.id.card_description)
+            rating = itemView.findViewById(R.id.card_rating)
         }
     }
 }
