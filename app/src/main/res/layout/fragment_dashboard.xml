@@ -26,7 +26,7 @@
 
       <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="800dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/text_dashboard"
         android:layout_margin="24dp"
         android:columnCount="2"
@@ -36,13 +36,14 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_row="0"
-          android:layout_rowWeight="1"
+          android:layout_rowWeight="0"
           android:layout_column="0"
           android:layout_columnWeight="1"
           android:layout_gravity="fill"
           android:layout_margin="8dp"
           app:cardCornerRadius="8dp"
-          app:cardElevation="8dp">
+          app:cardElevation="8dp"
+          >
 
           <LinearLayout
             android:layout_width="wrap_content"
@@ -52,14 +53,15 @@
             android:orientation="vertical">
 
             <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
+              android:layout_width="100dp"
+              android:layout_height="80dp"
+              android:gravity="center"
+              android:src="@drawable/quiz_logo_modified" />
 
             <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Animaux"
+              android:text="QCM"
               android:textAlignment="center"
               android:textStyle="bold" />
           </LinearLayout>
@@ -82,25 +84,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
             android:gravity="center"
+
             android:orientation="vertical">
 
             <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
+              android:layout_width="100dp"
+              android:layout_height="100dp"
+              android:layout_gravity="center"
+              android:paddingTop="18dp"
+              android:src="@drawable/music_instrument_categ" />
 
             <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Animaux"
+              android:text="Music Instrument"
               android:textAlignment="center"
-              android:textStyle="bold" />
+              android:textStyle="bold"
+              android:paddingBottom="18dp"/>
           </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
           android:layout_width="wrap_content"
-          android:layout_height="30dp"
+          android:layout_height="wrap_content"
           android:layout_row="2"
           android:layout_rowWeight="1"
           android:layout_column="0"
@@ -115,19 +121,24 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
+              android:layout_width="100dp"
+              android:layout_height="100dp"
+              android:layout_gravity="center"
+              android:paddingTop="18dp"
+              android:src="@drawable/animal_categ" />
 
             <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Animaux"
               android:textAlignment="center"
-              android:textStyle="bold" />
+              android:textStyle="bold"
+              android:paddingBottom="18dp"
+              />
           </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -148,116 +159,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
 
             <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
+              android:layout_width="100dp"
+              android:layout_height="80dp"
+              android:src="@drawable/abc" />
+
+            <ImageView
+              android:layout_width="100dp"
+              android:layout_height="80dp"
+              android:src="@drawable/numbers_modified" />
 
             <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Animaux"
-              android:textAlignment="center"
-              android:textStyle="bold" />
-          </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_row="3"
-          android:layout_rowWeight="1"
-          android:layout_column="0"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp">
-
-          <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
-
-            <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Animaux"
-              android:textAlignment="center"
-              android:textStyle="bold" />
-          </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_row="3"
-          android:layout_rowWeight="1"
-          android:layout_column="1"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp">
-
-          <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
-
-            <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Animaux"
-              android:textAlignment="center"
-              android:textStyle="bold" />
-          </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_row="4"
-          android:layout_rowWeight="1"
-          android:layout_column="0"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp">
-
-          <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_baseline_settings_24" />
-
-            <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Animaux"
+              android:text="Letters and Numbers"
               android:textAlignment="center"
               android:textStyle="bold" />
           </LinearLayout>
