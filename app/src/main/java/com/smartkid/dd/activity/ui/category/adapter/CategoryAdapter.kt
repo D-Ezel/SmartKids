@@ -20,8 +20,16 @@ class CategoryAdapter constructor(private var categoryHeplerList: ArrayList<Cate
 
     override fun onBindViewHolder(holder: CategoryHold, position: Int) {
         val categoryHepler: CategoryHelper = categoryHeplerList!![position]
-        categoryHepler.getImg()?.let { holder.img.setImageResource(it) }
+        categoryHepler.getImg()?.let {
+            holder.img.setImageResource(it)
+            holder.img.setOnClickListener {
+                mOnClickListener.onCategoryListClick(categoryHepler.getTitle())
+            }
+        }
         holder.title.setText(categoryHepler.getTitle())
+        holder.itemView.setOnClickListener {
+            mOnClickListener.onCategoryListClick(categoryHepler.getTitle())
+        }
     }
 
     override fun getItemCount(): Int {
@@ -29,7 +37,7 @@ class CategoryAdapter constructor(private var categoryHeplerList: ArrayList<Cate
     }
 
     interface ListItemClickListener {
-        fun onCategoryListClick(clickedItemIndex: Int)
+        fun onCategoryListClick(title:String?)
     }
 
     class CategoryHold(itemView: View) : RecyclerView.ViewHolder(itemView),
@@ -37,9 +45,6 @@ class CategoryAdapter constructor(private var categoryHeplerList: ArrayList<Cate
         var img: ImageView
         var title: TextView
         override fun onClick(v: View?) {
-            val clickedPosition = adapterPosition
-            val mOnClickListener: ListItemClickListener? = null
-            mOnClickListener?.onCategoryListClick(clickedPosition)
         }
 
         init {

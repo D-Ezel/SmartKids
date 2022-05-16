@@ -91,5 +91,7 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
         _binding = null
     }
 
-    override fun onCategoryListClick(clickedItemIndex: Int) {}
+    override fun onCategoryListClick(title: String?) {
+        System.out.println(title)
+    }
 }
