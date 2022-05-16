@@ -5,7 +5,14 @@
   android:layout_height="wrap_content"
   tools:context="com.smartkid.dd.activity.ui.notifications.NotificationsFragment">
 
-      <TextView
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/notifications_recycler"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:clipToPadding="false"
+      android:scrollbars="vertical"/>
+
+    <TextView
         android:id="@+id/text_notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,43 +27,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:contentPadding="6dp"
-      app:cardCornerRadius="10dp"
-      android:layout_margin="3dp">
-
-        <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="12dp">
-
-            <ImageView
-              android:id="@+id/imageView2"
-              android:layout_width="80dp"
-              android:layout_height="80dp"
-              android:layout_alignParentEnd="true"
-              android:src="@android:drawable/ic_lock_idle_alarm" />
-
-            <TextView
-              android:id="@+id/id_title_notif_card"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="@string/title_notif_card"
-              android:textSize="20sp"
-              android:textColor="@color/black"
-              android:textStyle="bold"
-              android:layout_marginEnd="110dp"/>
-
-            <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="@string/dt_notif_card"
-              android:layout_below="@id/id_title_notif_card"
-              android:layout_marginEnd="80dp"/>
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
