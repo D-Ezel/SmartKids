@@ -57,17 +57,18 @@
         android:textSize="15sp" />
 
     <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_password"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/btn_custom"
-        android:fontFamily="@font/roboto_regular"
-        android:text="@string/login"
-        android:textColor="@android:color/white" />
+      android:id="@+id/btn_login"
+      android:onClick = "login"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/et_password"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:layout_marginRight="20dp"
+      android:background="@drawable/btn_custom"
+      android:fontFamily="@font/roboto_regular"
+      android:text="@string/login"
+      android:textColor="@android:color/white" />
 
     <ImageView
         android:layout_width="30dp"

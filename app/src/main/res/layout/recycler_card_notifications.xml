@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+  <soup.neumorphism.NeumorphCardView
+    android:id="@+id/card_notif"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:neumorph_shadowElevation="0dp"
+    >
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="12dp">
+
+      <ImageView
+        android:id="@+id/img_notif_card"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_lock_idle_alarm" />
+
+      <TextView
+        android:id="@+id/title_notif_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="110dp"
+        android:text="@string/title_notif_card"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+      <TextView
+        android:id="@+id/time_notif_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_notif_card"
+        android:layout_marginEnd="80dp"
+        android:text="@string/dt_notif_card" />
+
+    </RelativeLayout>
+
+  </soup.neumorphism.NeumorphCardView>
+
+</LinearLayout>
