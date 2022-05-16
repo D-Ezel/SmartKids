@@ -3,10 +3,10 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context="com.smartkid.dd.activity.ui.dashboard.DashboardFragment">
+  tools:context="com.smartkid.dd.activity.ui.category.CategoryFragment">
 
   <TextView
-    android:id="@+id/text_dashboard"
+    android:id="@+id/text_category"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
@@ -27,7 +27,6 @@
       <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_dashboard"
         android:layout_margin="24dp"
         android:columnCount="2"
         android:rowCount="5">
