@@ -1,9 +1,8 @@
-package com.smartkid.dd.activity.ui.home.helper
+package com.smartkid.dd.activity.ui.category.helper
 
-class PopularHelper {
+class CategoryHelper {
     private var img: Int
     private var title: String?
-    private var rating: Float
 
     fun getImg(): Int {
         return this.img;
@@ -21,17 +20,8 @@ class PopularHelper {
         this.title = value
     }
 
-    fun getRating(): Float {
-        return this.rating;
-    }
-
-    fun setRating(value: Float) {
-        this.rating = value
-    }
-
-    constructor(img: Int, title: String?, rating: Float) {
+    constructor(img: Int, title: String?) {
         this.img = img
         this.title = title
-        this.rating = rating
     }
 }
