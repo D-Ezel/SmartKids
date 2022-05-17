@@ -1,5 +1,6 @@
 package com.smartkid.dd.activity.ui.category
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.TypedValue
@@ -13,11 +14,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartkid.dd.R
+import com.smartkid.dd.activity.ItemsCategory
 import com.smartkid.dd.activity.ui.category.adapter.CategoryAdapter
 import com.smartkid.dd.activity.ui.category.helper.CategoryHelper
 import com.smartkid.dd.databinding.FragmentCategoryBinding
 import com.smartkid.dd.tools.GridSpacingItemDecoration
 
+const val IDENTIFICATION = "id"
 
 class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
 
@@ -92,6 +95,9 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
     }
 
     override fun onCategoryListClick(title: String?) {
-        System.out.println(title)
+        val intent = Intent(this.context, ItemsCategory::class.java).apply {
+            putExtra(IDENTIFICATION, title)
+        }
+        startActivity(intent)
     }
 }
