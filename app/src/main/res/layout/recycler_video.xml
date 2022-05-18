@@ -5,7 +5,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <ImageView
-    android:id="@+id/imgEducGames"
+    android:id="@+id/img_educ_games"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e6e6e6"
@@ -30,10 +30,11 @@
   <ImageButton
     android:layout_width="140dp"
     android:layout_height="140dp"
+    android:layout_marginBottom="18dp"
     android:background="@drawable/play_btn"
     app:layout_constraintEnd_toEndOf="@id/time_video"
-    app:layout_constraintStart_toStartOf="@id/title_game"
-    app:layout_constraintBottom_toBottomOf="@id/title_game" />
+    app:layout_constraintStart_toStartOf="@id/title_video"
+    app:layout_constraintBottom_toBottomOf="@id/title_video" />
 
   <TextView
     android:id="@+id/time_video"
@@ -50,7 +51,7 @@
     />
 
   <TextView
-    android:id="@+id/title_game"
+    android:id="@+id/title_video"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="44dp"
@@ -63,7 +64,7 @@
     />
 
   <TextView
-    android:id="@+id/author_game"
+    android:id="@+id/author_video"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -73,7 +74,7 @@
     android:textSize="12sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/title_game"
+    app:layout_constraintTop_toBottomOf="@id/title_video"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
