@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="250dp"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <ImageView
+    android:id="@+id/imgEducGames"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6e6e6"
+    android:src="@drawable/guess_animal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    />
+
+  <ImageView
+    android:id="@+id/bg_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+
+  <ImageButton
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+    android:background="@drawable/play_btn"
+    app:layout_constraintEnd_toEndOf="@id/time_video"
+    app:layout_constraintStart_toStartOf="@id/title_game"
+    app:layout_constraintBottom_toBottomOf="@id/title_game" />
+
+  <TextView
+    android:id="@+id/time_video"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="00:10:00"
+    android:textSize="14sp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="28dp"
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+
+  <TextView
+    android:id="@+id/title_game"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="44dp"
+    android:layout_marginStart="16dp"
+    android:text="Animal"
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+
+  <TextView
+    android:id="@+id/author_game"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginBottom="25dp"
+    android:text="Daniel"
+    android:textColor="@android:color/darker_gray"
+    android:textSize="12sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/title_game"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

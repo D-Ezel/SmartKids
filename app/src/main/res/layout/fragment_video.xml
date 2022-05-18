@@ -13,4 +13,6 @@
     android:textSize="18sp"
     android:text="TAB 2" />
 
+  <include layout="@layout/recycler_video"/>
+
 </FrameLayout>

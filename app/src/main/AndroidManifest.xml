@@ -12,7 +12,7 @@
       android:name=".activity.ItemsCategory"
       android:exported="false"
       android:label="@string/title_activity_items_category"
-      android:theme="@style/Theme.SmartKid.NoActionBar" />
+      android:theme="@style/AppTheme.Main" />
     <activity
       android:name=".activity.MainActivity"
       android:exported="false"
