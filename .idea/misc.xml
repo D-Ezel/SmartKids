@@ -16,8 +16,14 @@
         <entry key="..\:/Users/Ratsidikaina/Documents/android/SmartKid/app/src/main/res/layout/activity_main.xml" value="0.11594202898550725" />
         <entry key="..\:/Users/Ratsidikaina/Documents/android/SmartKid/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/Ratsidikaina/Documents/android/SmartKid/app/src/main/res/layout/fragment_register.xml" value="0.33" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/drawable/bg_gradient.xml" value="0.1935" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/activity_items_category.xml" value="0.15443840579710144" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_education_games.xml" value="0.13385416666666666" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_items_category.xml" value="0.13385416666666666" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_video.xml" value="0.13385416666666666" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/recycler_card_category.xml" value="0.1" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/recycler_education_games.xml" value="0.1" />
       </map>
     </option>
   </component>
