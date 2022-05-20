@@ -40,6 +40,7 @@ class SettingsAdapter internal constructor(
 
             val expandedListTextView = convertView!!.findViewById<Switch>(R.id.item_switch)
             expandedListTextView.text = expandedListText
+            expandedListTextView.isChecked
             return convertView
         } else if(getGroup(listPosition) as String == "Compte") {
             val layoutInflater =
