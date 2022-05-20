@@ -1,5 +1,6 @@
 package com.smartkid.dd.activity.ui.main.tabs
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartkid.dd.R
+import com.smartkid.dd.activity.WatchActivity
 import com.smartkid.dd.activity.ui.main.tabs.adapter.VideoAdapter
 import com.smartkid.dd.activity.ui.main.tabs.helper.VideoHelper
 import com.smartkid.dd.databinding.FragmentVideoBinding
+
+const val IDENTIFICATION = "id"
 
 class VideoFragment : Fragment(), VideoAdapter.ListItemClickListener {
     var videoRecycler: RecyclerView? = null
@@ -54,8 +58,11 @@ class VideoFragment : Fragment(), VideoAdapter.ListItemClickListener {
         videoRecycler?.setAdapter(videoAdapter)
     }
 
-    override fun onVideoListClick(clickedItemIndex: Int) {
-
+    override fun onVideoListClick(title: String?) {
+        val intent = Intent(this.context, WatchActivity::class.java).apply {
+            putExtra(IDENTIFICATION, title)
+        }
+        startActivity(intent)
     }
 
 }

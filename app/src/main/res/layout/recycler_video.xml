@@ -28,10 +28,12 @@
     />
 
   <ImageButton
-    android:layout_width="140dp"
-    android:layout_height="140dp"
-    android:layout_marginBottom="18dp"
+    android:id="@+id/play_video"
+    android:layout_width="125dp"
+    android:layout_height="125dp"
+    android:layout_marginBottom="25dp"
     android:background="@drawable/play_btn"
+    android:theme="@style/ClickableView"
     app:layout_constraintEnd_toEndOf="@id/time_video"
     app:layout_constraintStart_toStartOf="@id/title_video"
     app:layout_constraintBottom_toBottomOf="@id/title_video" />

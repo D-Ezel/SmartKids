@@ -3,6 +3,7 @@ package com.smartkid.dd.activity.ui.main.tabs.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -25,6 +26,9 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
         videoHelper.getImg()?.let { holder.img.setImageResource(it) }
         holder.title.setText(videoHelper.getTitle())
         holder.author.text = videoHelper.getAuthor()
+        holder.playVideo.setOnClickListener {
+            mOnClickListener.onVideoListClick(videoHelper.getTitle())
+        }
     }
 
     override fun getItemCount(): Int {
@@ -32,7 +36,7 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
     }
 
     interface ListItemClickListener {
-        fun onVideoListClick(clickedItemIndex: Int)
+        fun onVideoListClick(title: String?)
     }
 
     class VideoHold(itemView: View) : RecyclerView.ViewHolder(itemView),
@@ -40,6 +44,7 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
         var img: ImageView
         var title: TextView
         var author: TextView
+        var playVideo: ImageButton
         override fun onClick(v: View?) {
         }
 
@@ -49,6 +54,7 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
             img = itemView.findViewById(R.id.img_educ_games)
             title = itemView.findViewById(R.id.title_video)
             author = itemView.findViewById(R.id.author_video)
+            playVideo = itemView.findViewById(R.id.play_video)
         }
     }
 }
