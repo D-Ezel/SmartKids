@@ -1,13 +1,21 @@
 package com.smartkid.dd.activity.ui.category
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
 import android.content.res.Resources
+import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RemoteViews
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -99,5 +107,31 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
             putExtra(IDENTIFICATION, title)
         }
         startActivity(intent)
+        showNotification()
+    }
+
+    private fun showNotification() {
+        val channelID ="1000"
+        val notificationManager = this.activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val contentView = RemoteViews(this.activity?.packageName, R.layout.custom_notification_view)
+        contentView.setTextViewText(R.id.title_notif, "My notif")
+        contentView.setTextViewText(R.id.desc_notif, "desc notif")
+        val builder =
+            this.activity?.let {
+                NotificationCompat.Builder(it.applicationContext, channelID)
+                    .setSmallIcon(R.drawable.ic_notifications_black_24dp)
+                    .setCustomContentView(contentView)
+            }
+        builder?.setContent(contentView)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(channelID, "Custom Notification", NotificationManager.IMPORTANCE_DEFAULT)
+            channel.enableVibration(true)
+            notificationManager.createNotificationChannel(channel)
+            if (builder != null) {
+                builder.setChannelId(channelID)
+            }
+        }
+        val notification = builder?.build()
+        notificationManager.notify(1000, notification)
     }
 }
