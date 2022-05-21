@@ -1,8 +1,13 @@
 package com.smartkid.dd.activity.ui.category.helper
 
 class CategoryHelper {
+    private var _id: String?
     private var img: Int
     private var title: String?
+
+    fun get_id(): String? {
+        return this._id
+    }
 
     fun getImg(): Int {
         return this.img;
@@ -20,7 +25,8 @@ class CategoryHelper {
         this.title = value
     }
 
-    constructor(img: Int, title: String?) {
+    constructor(_id:String?, img: Int, title: String?) {
+        this._id = _id
         this.img = img
         this.title = title
     }

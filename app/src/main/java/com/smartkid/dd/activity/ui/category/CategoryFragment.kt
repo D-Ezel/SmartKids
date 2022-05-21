@@ -1,23 +1,34 @@
 package com.smartkid.dd.activity.ui.category
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.content.Context.NOTIFICATION_SERVICE
+import android.content.Intent
 import android.content.res.Resources
+import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RemoteViews
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartkid.dd.R
+import com.smartkid.dd.activity.ItemsCategory
 import com.smartkid.dd.activity.ui.category.adapter.CategoryAdapter
 import com.smartkid.dd.activity.ui.category.helper.CategoryHelper
 import com.smartkid.dd.databinding.FragmentCategoryBinding
 import com.smartkid.dd.tools.GridSpacingItemDecoration
 
+const val IDENTIFICATION = "id"
 
 class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
 
@@ -67,10 +78,10 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
         categoryRecycler?.setItemAnimator(DefaultItemAnimator())
 
         val categoryHelperList: ArrayList<CategoryHelper> = ArrayList()
-        categoryHelperList.add(CategoryHelper(R.drawable.quiz_logo_modified, "QCM"))
-        categoryHelperList.add(CategoryHelper(R.drawable.music_instrument_categ, "Music Instruments"))
-        categoryHelperList.add(CategoryHelper(R.drawable.animal_categ, "Animaux"))
-        categoryHelperList.add(CategoryHelper(R.drawable.abc, "Letters and Numbers"))
+        categoryHelperList.add(CategoryHelper("6284efdfdaac815be2cbe1e0", R.drawable.quiz_logo_modified, "Pays"))
+        categoryHelperList.add(CategoryHelper("6284eededaac815be2cbe1dd",R.drawable.music_instrument_categ, "Music Instruments"))
+        categoryHelperList.add(CategoryHelper("6284efbddaac815be2cbe1de",R.drawable.animal_categ, "Animaux"))
+        categoryHelperList.add(CategoryHelper("6284efcfdaac815be2cbe1df",R.drawable.abc, "Letters and Numbers"))
         categoryAdapter = CategoryAdapter(categoryHelperList, this)
         categoryRecycler?.setAdapter(categoryAdapter)
     }
@@ -91,7 +102,36 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
         _binding = null
     }
 
-    override fun onCategoryListClick(title: String?) {
-        System.out.println(title)
+    override fun onCategoryListClick(id: String?) {
+        val intent = Intent(this.context, ItemsCategory::class.java).apply {
+            putExtra(IDENTIFICATION, id)
+        }
+        startActivity(intent)
+        showNotification()
+    }
+
+    private fun showNotification() {
+        val channelID ="1000"
+        val notificationManager = this.activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val contentView = RemoteViews(this.activity?.packageName, R.layout.custom_notification_view)
+        contentView.setTextViewText(R.id.title_notif, "My notif")
+        contentView.setTextViewText(R.id.desc_notif, "desc notif")
+        val builder =
+            this.activity?.let {
+                NotificationCompat.Builder(it.applicationContext, channelID)
+                    .setSmallIcon(R.drawable.ic_notifications_black_24dp)
+                    .setCustomContentView(contentView)
+            }
+        builder?.setContent(contentView)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(channelID, "Custom Notification", NotificationManager.IMPORTANCE_DEFAULT)
+            channel.enableVibration(true)
+            notificationManager.createNotificationChannel(channel)
+            if (builder != null) {
+                builder.setChannelId(channelID)
+            }
+        }
+        val notification = builder?.build()
+        notificationManager.notify(1000, notification)
     }
 }

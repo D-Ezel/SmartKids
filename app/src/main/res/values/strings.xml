@@ -19,6 +19,6 @@
   <string name="title_notif_card">New game for increase kids\'smart</string>
   <string name="dt_notif_card">il y a 1 min</string>
   <string name="title_activity_items_category">ItemsCategory</string>
-  <string name="tab_text_1">Tab 1</string>
-  <string name="tab_text_2">Tab 2</string>
+  <string name="tab_text_1">Educational games</string>
+  <string name="tab_text_2">Video</string>
 </resources>
