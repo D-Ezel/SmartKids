@@ -15,6 +15,7 @@ import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ui.PlayerView
 import com.smartkid.dd.R
+import com.smartkid.dd.activity.ui.main.tabs.SOURCE
 
 class WatchActivity : AppCompatActivity() {
     companion object {
@@ -68,7 +69,8 @@ class WatchActivity : AppCompatActivity() {
                 }
             }
         })
-        val videoSrc = Uri.parse("https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4")
+        val source = intent.getStringExtra(SOURCE)
+        val videoSrc = Uri.parse(source)
         val mediaItem = MediaItem.fromUri(videoSrc)
         simpleExoPlayer.setMediaItem(mediaItem)
         simpleExoPlayer.prepare()

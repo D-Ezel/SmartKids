@@ -78,10 +78,10 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
         categoryRecycler?.setItemAnimator(DefaultItemAnimator())
 
         val categoryHelperList: ArrayList<CategoryHelper> = ArrayList()
-        categoryHelperList.add(CategoryHelper(R.drawable.quiz_logo_modified, "QCM"))
-        categoryHelperList.add(CategoryHelper(R.drawable.music_instrument_categ, "Music Instruments"))
-        categoryHelperList.add(CategoryHelper(R.drawable.animal_categ, "Animaux"))
-        categoryHelperList.add(CategoryHelper(R.drawable.abc, "Letters and Numbers"))
+        categoryHelperList.add(CategoryHelper("6284efdfdaac815be2cbe1e0", R.drawable.quiz_logo_modified, "Pays"))
+        categoryHelperList.add(CategoryHelper("6284eededaac815be2cbe1dd",R.drawable.music_instrument_categ, "Music Instruments"))
+        categoryHelperList.add(CategoryHelper("6284efbddaac815be2cbe1de",R.drawable.animal_categ, "Animaux"))
+        categoryHelperList.add(CategoryHelper("6284efcfdaac815be2cbe1df",R.drawable.abc, "Letters and Numbers"))
         categoryAdapter = CategoryAdapter(categoryHelperList, this)
         categoryRecycler?.setAdapter(categoryAdapter)
     }
@@ -102,9 +102,9 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
         _binding = null
     }
 
-    override fun onCategoryListClick(title: String?) {
+    override fun onCategoryListClick(id: String?) {
         val intent = Intent(this.context, ItemsCategory::class.java).apply {
-            putExtra(IDENTIFICATION, title)
+            putExtra(IDENTIFICATION, id)
         }
         startActivity(intent)
         showNotification()

@@ -18,6 +18,7 @@ import com.smartkid.dd.databinding.ActivityItemsCategoryBinding
 import com.smartkid.dd.R
 import com.smartkid.dd.activity.ui.main.tabs.EducationGamesFragment
 import com.smartkid.dd.activity.ui.main.tabs.VideoFragment
+import kotlin.coroutines.EmptyCoroutineContext
 
 class ItemsCategory : AppCompatActivity() {
 
@@ -36,13 +37,13 @@ class ItemsCategory : AppCompatActivity() {
 
         val sectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         sectionsPagerAdapter.addFragment(EducationGamesFragment(), "Educational Games")
-        sectionsPagerAdapter.addFragment(VideoFragment(), "Video")
+        sectionsPagerAdapter.addFragment(VideoFragment(EmptyCoroutineContext), "Video")
         viewPager.adapter = sectionsPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
 
         val id = intent.getStringExtra(IDENTIFICATION)
         val title = findViewById<TextView>(R.id.title).apply {
-            text = id
+            text = "SmartKids"
         }
     }
 }

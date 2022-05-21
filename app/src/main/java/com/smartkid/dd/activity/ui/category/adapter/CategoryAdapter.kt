@@ -23,12 +23,12 @@ class CategoryAdapter constructor(private var categoryHeplerList: ArrayList<Cate
         categoryHepler.getImg()?.let {
             holder.img.setImageResource(it)
             holder.img.setOnClickListener {
-                mOnClickListener.onCategoryListClick(categoryHepler.getTitle())
+                mOnClickListener.onCategoryListClick(categoryHepler.get_id())
             }
         }
         holder.title.setText(categoryHepler.getTitle())
         holder.itemView.setOnClickListener {
-            mOnClickListener.onCategoryListClick(categoryHepler.getTitle())
+            mOnClickListener.onCategoryListClick(categoryHepler.get_id())
         }
     }
 
@@ -37,7 +37,7 @@ class CategoryAdapter constructor(private var categoryHeplerList: ArrayList<Cate
     }
 
     interface ListItemClickListener {
-        fun onCategoryListClick(title:String?)
+        fun onCategoryListClick(id:String?)
     }
 
     class CategoryHold(itemView: View) : RecyclerView.ViewHolder(itemView),

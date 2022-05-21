@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.smartkid.dd.R
 import com.smartkid.dd.activity.ui.main.tabs.helper.VideoHelper
 
@@ -23,11 +24,12 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
 
     override fun onBindViewHolder(holder: VideoHold, position: Int) {
         val videoHelper: VideoHelper = videoList!![position]
-        videoHelper.getImg()?.let { holder.img.setImageResource(it) }
+        Glide.with(holder.img.context).load(videoHelper.getImg()).into(holder.img)
         holder.title.setText(videoHelper.getTitle())
         holder.author.text = videoHelper.getAuthor()
+        holder.duration.text = videoHelper.getDuration()
         holder.playVideo.setOnClickListener {
-            mOnClickListener.onVideoListClick(videoHelper.getTitle())
+            mOnClickListener.onVideoListClick(videoHelper.getSrc())
         }
     }
 
@@ -45,6 +47,7 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
         var title: TextView
         var author: TextView
         var playVideo: ImageButton
+        var duration: TextView
         override fun onClick(v: View?) {
         }
 
@@ -55,6 +58,7 @@ class VideoAdapter constructor(private var videoList: ArrayList<VideoHelper>, pr
             title = itemView.findViewById(R.id.title_video)
             author = itemView.findViewById(R.id.author_video)
             playVideo = itemView.findViewById(R.id.play_video)
+            duration = itemView.findViewById(R.id.time_video)
         }
     }
 }

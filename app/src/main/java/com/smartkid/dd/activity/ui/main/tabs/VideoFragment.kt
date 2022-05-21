@@ -6,20 +6,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartkid.dd.R
 import com.smartkid.dd.activity.WatchActivity
 import com.smartkid.dd.activity.ui.main.tabs.adapter.VideoAdapter
 import com.smartkid.dd.activity.ui.main.tabs.helper.VideoHelper
+import com.smartkid.dd.activity.ui.main.tabs.models.Video
+import com.smartkid.dd.api.ApiClient
 import com.smartkid.dd.databinding.FragmentVideoBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
+import kotlin.coroutines.CoroutineContext
 
-const val IDENTIFICATION = "id"
+const val SOURCE = "src"
 
-class VideoFragment : Fragment(), VideoAdapter.ListItemClickListener {
+class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(), VideoAdapter.ListItemClickListener, CoroutineScope {
     var videoRecycler: RecyclerView? = null
     var videoAdapter: RecyclerView.Adapter<*>? = null
-
+    var videoList : MutableList<Video> = ArrayList()
     private var _binding: FragmentVideoBinding? = null
 
     // This property is only valid between onCreateView and
@@ -50,19 +58,58 @@ class VideoFragment : Fragment(), VideoAdapter.ListItemClickListener {
                 false
             )
         )
-        val videoList: ArrayList<VideoHelper> = ArrayList()
-        videoList.add(VideoHelper(R.drawable.pets, "Les differents animaux domestiques","Daniel", "https"))
-        videoList.add(VideoHelper(R.drawable.animaux_sauvage, "Les animaux sauvages", "Yvan", "https"))
-        videoList.add(VideoHelper(R.drawable.sound_animal, "Les differentes sons d'animaux", "Sam", "https"))
-        videoAdapter = VideoAdapter(videoList, this)
-        videoRecycler?.setAdapter(videoAdapter)
+        videoList()
+
+        /*val videoListHelper: ArrayList<VideoHelper> = ArrayList()
+        videoListHelper.add(VideoHelper(/*R.drawable.pets*/0, "Les differents animaux domestiques","Daniel", "https"))
+        videoListHelper.add(VideoHelper(/*R.drawable.animaux_sauvage*/0, "Les animaux sauvages", "Yvan", "https"))
+        videoListHelper.add(VideoHelper(/*R.drawable.sound_animal*/0, "Les differentes sons d'animaux", "Sam", "https"))
+        videoAdapter = VideoAdapter(videoListHelper, this)
+        videoRecycler?.setAdapter(videoAdapter)*/
     }
 
     override fun onVideoListClick(title: String?) {
         val intent = Intent(this.context, WatchActivity::class.java).apply {
-            putExtra(IDENTIFICATION, title)
+            putExtra(SOURCE, title)
         }
         startActivity(intent)
+    }
+
+    private fun videoList() {
+        val idCategory = this.activity?.intent?.getStringExtra(com.smartkid.dd.activity.ui.category.IDENTIFICATION)
+        launch(Dispatchers.Main) {
+            val response :  Response<MutableList<Video>>
+            try {
+                response = ApiClient.apiService.getVideo(idCategory)
+
+                if (response.isSuccessful && response.body() != null) {
+                    val content = response.body()
+                    if (content != null) {
+                        videoList = content
+                        val videoListHelper: ArrayList<VideoHelper> = ArrayList()
+                        for(videoItem in videoList) {
+                            videoListHelper.add(VideoHelper(videoItem.thumbnail, videoItem.titre, videoItem.auteur, videoItem.video, videoItem.duration))
+                        }
+                        videoAdapter = VideoAdapter(videoListHelper, this@VideoFragment)
+                        videoRecycler?.setAdapter(videoAdapter)
+                    }
+//do something
+                } else {
+                    Toast.makeText(
+                        this@VideoFragment.context,
+                        "Error Occurred: ${response.message()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+            } catch (e: Exception) {
+                Toast.makeText(
+                    this@VideoFragment.context,
+                    "Error Occurred: ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
 }

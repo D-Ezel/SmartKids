@@ -10,7 +10,7 @@ internal object  SettingsData {
         val preferences: MutableList<String> =
             ArrayList()
         preferences.add("Notifications' display")
-        preferences.add("Notifications' vibrations")
+        preferences.add("Notifications' vibration")
 
         val compte: MutableList<String> = ArrayList()
         compte.add("Log out")
