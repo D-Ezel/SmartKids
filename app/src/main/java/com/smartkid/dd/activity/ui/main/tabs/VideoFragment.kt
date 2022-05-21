@@ -64,13 +64,6 @@ class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(
             )
         )
         videoList(loading)
-
-        /*val videoListHelper: ArrayList<VideoHelper> = ArrayList()
-        videoListHelper.add(VideoHelper(/*R.drawable.pets*/0, "Les differents animaux domestiques","Daniel", "https"))
-        videoListHelper.add(VideoHelper(/*R.drawable.animaux_sauvage*/0, "Les animaux sauvages", "Yvan", "https"))
-        videoListHelper.add(VideoHelper(/*R.drawable.sound_animal*/0, "Les differentes sons d'animaux", "Sam", "https"))
-        videoAdapter = VideoAdapter(videoListHelper, this)
-        videoRecycler?.setAdapter(videoAdapter)*/
     }
 
     override fun onVideoListClick(title: String?) {
