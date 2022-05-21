@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +28,8 @@ const val SOURCE = "src"
 class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(), VideoAdapter.ListItemClickListener, CoroutineScope {
     var videoRecycler: RecyclerView? = null
     var videoAdapter: RecyclerView.Adapter<*>? = null
+
+    var loading: ProgressBar? = null
     var videoList : MutableList<Video> = ArrayList()
     private var _binding: FragmentVideoBinding? = null
 
@@ -43,13 +46,15 @@ class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(
         val root: View = binding.root
 
         val videoRecyclerCaller: RecyclerView = binding.videoRecycler
+        val loadingCaller: ProgressBar = binding.loading
         videoRecycler = videoRecyclerCaller.findViewById(R.id.video_recycler)
-        videoViewRecycler()
+        loading = loadingCaller.findViewById((R.id.loading))
+        videoViewRecycler(loading)
 
         return root
     }
 
-    private fun videoViewRecycler() {
+    private fun videoViewRecycler(loading:ProgressBar?) {
         videoRecycler?.setHasFixedSize(true)
         videoRecycler?.setLayoutManager(
             LinearLayoutManager(
@@ -58,7 +63,7 @@ class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(
                 false
             )
         )
-        videoList()
+        videoList(loading)
 
         /*val videoListHelper: ArrayList<VideoHelper> = ArrayList()
         videoListHelper.add(VideoHelper(/*R.drawable.pets*/0, "Les differents animaux domestiques","Daniel", "https"))
@@ -75,7 +80,7 @@ class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(
         startActivity(intent)
     }
 
-    private fun videoList() {
+    private fun videoList(loading: ProgressBar?) {
         val idCategory = this.activity?.intent?.getStringExtra(com.smartkid.dd.activity.ui.category.IDENTIFICATION)
         launch(Dispatchers.Main) {
             val response :  Response<MutableList<Video>>
@@ -92,6 +97,9 @@ class VideoFragment(override val coroutineContext: CoroutineContext) : Fragment(
                         }
                         videoAdapter = VideoAdapter(videoListHelper, this@VideoFragment)
                         videoRecycler?.setAdapter(videoAdapter)
+                        if (loading != null) {
+                            loading.visibility = View.GONE
+                        }
                     }
 //do something
                 } else {
