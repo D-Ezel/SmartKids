@@ -18,6 +18,7 @@
         <entry key="..\:/Users/Ratsidikaina/Documents/android/SmartKid/app/src/main/res/layout/fragment_register.xml" value="0.33" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/drawable/bg_gradient.xml" value="0.1935" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/drawable/custom_btn_rounded.xml" value="0.144" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/drawable/ic_baseline_campaign.xml" value="0.144" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/activity_items_category.xml" value="0.15443840579710144" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/activity_watch.xml" value="0.13385416666666666" />
@@ -25,6 +26,7 @@
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/custom_notification_view.xml" value="0.15632603406326034" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/expandable_list_item.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_animal_game.xml" value="0.13385416666666666" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_category.xml" value="0.13385416666666666" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_education_games.xml" value="0.13385416666666666" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_instrument.xml" value="0.13385416666666666" />
@@ -35,6 +37,7 @@
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/fragment_video.xml" value="0.13385416666666666" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/item_switch.xml" value="0.1" />
+        <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/recycler_animal_game.xml" value="0.13385416666666666" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/recycler_card_category.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/recycler_card_notifications.xml" value="0.1" />
         <entry key="..\:/informatique ITU/Master 1/Mr Rojo/Project/Android App/Smart-Kids/app/src/main/res/layout/recycler_card_popular.xml" value="0.13385416666666666" />
