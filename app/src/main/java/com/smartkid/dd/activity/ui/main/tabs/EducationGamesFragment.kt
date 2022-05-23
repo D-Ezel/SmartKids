@@ -20,7 +20,8 @@ class EducationGamesFragment : Fragment() {
         val id = this.activity?.intent?.getStringExtra(IDENTIFICATION)
         if(id.equals("6284eededaac815be2cbe1dd")) {
             //instrument
-            return inflater.inflate(R.layout.fragment_instrument, container, false)
+            inflater.inflate(R.layout.fragment_instrument, container, false)
+            return InstrumentFragment(EmptyCoroutineContext,this).onCreateView(inflater, container, null)
         } else if(id.equals("6284efbddaac815be2cbe1de")){
             //animaux
             inflater.inflate(R.layout.fragment_animal_game, container, false)
