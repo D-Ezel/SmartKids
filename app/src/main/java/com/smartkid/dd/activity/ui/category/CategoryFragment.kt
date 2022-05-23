@@ -79,9 +79,9 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
 
         val categoryHelperList: ArrayList<CategoryHelper> = ArrayList()
         categoryHelperList.add(CategoryHelper("6284efdfdaac815be2cbe1e0", R.drawable.quiz_logo_modified, "Pays"))
-        categoryHelperList.add(CategoryHelper("6284eededaac815be2cbe1dd",R.drawable.music_instrument_categ, "Music Instruments"))
+        categoryHelperList.add(CategoryHelper("6284eededaac815be2cbe1dd",R.drawable.music_instrument_categ, "Instruments de musiques"))
         categoryHelperList.add(CategoryHelper("6284efbddaac815be2cbe1de",R.drawable.animal_categ, "Animaux"))
-        categoryHelperList.add(CategoryHelper("6284efcfdaac815be2cbe1df",R.drawable.abc, "Letters and Numbers"))
+        categoryHelperList.add(CategoryHelper("6284efcfdaac815be2cbe1df",R.drawable.abc, "Lettre & Nombre"))
         categoryAdapter = CategoryAdapter(categoryHelperList, this)
         categoryRecycler?.setAdapter(categoryAdapter)
     }
@@ -116,7 +116,7 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
         val contentView = RemoteViews(this.activity?.packageName, R.layout.custom_notification_view)
         if(idCategory.equals("6284efdfdaac815be2cbe1e0")) {
             contentView.setTextViewText(R.id.title_notif, "Catégorie Pays")
-            contentView.setTextViewText(R.id.desc_notif, "Il y a du Quiz concernant les Pays et des vidéos pour bien apprendre les capitales des pays")
+            contentView.setTextViewText(R.id.desc_notif, "Des vidéos pour bien apprendre les capitales des pays")
         }
         if(idCategory.equals("6284eededaac815be2cbe1dd")) {
             contentView.setTextViewText(R.id.title_notif, "Catégorie Instrument de Musique")
@@ -130,7 +130,7 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
 
         if(idCategory.equals("6284efcfdaac815be2cbe1df")) {
             contentView.setTextViewText(R.id.title_notif, "Catégorie Lettre & Nombre")
-            contentView.setTextViewText(R.id.desc_notif, "traduisez les nombres en lettre ou vice versa. Vidéo interessant concernant les lettres et nombres")
+            contentView.setTextViewText(R.id.desc_notif, "Vidéo interessant concernant les lettres et nombres")
         }
         val builder =
             this.activity?.let {
