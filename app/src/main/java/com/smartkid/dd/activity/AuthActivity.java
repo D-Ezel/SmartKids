@@ -23,7 +23,7 @@ public class AuthActivity extends AppCompatActivity {
 
         AuthenticationPagerAdapter pagerAdapter = new AuthenticationPagerAdapter(getSupportFragmentManager());
         pagerAdapter.addFragment(new LoginFragment(this));
-        pagerAdapter.addFragment(new RegisterFragment());
+        pagerAdapter.addFragment(new RegisterFragment(this));
         viewPager.setAdapter(pagerAdapter);
     }
 }
