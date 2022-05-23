@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.smartkid.dd.R;
+import com.smartkid.dd.activity.AuthActivity;
+import com.smartkid.dd.listener.OnClickLogin;
 
 public class LoginFragment extends Fragment {
 
@@ -24,9 +26,12 @@ public class LoginFragment extends Fragment {
     EditText etEmail;
     EditText etPassword;
     TextView tvTitle;
+    AuthActivity loginActivity;
 
-    public LoginFragment() {
-        // Required empty public constructor
+    public LoginFragment(){}
+
+    public LoginFragment(AuthActivity loginActivity) {
+        this.loginActivity = loginActivity;
     }
 
     @Override
@@ -35,12 +40,7 @@ public class LoginFragment extends Fragment {
             // Inflate the layout for this fragment
             View view = inflater.inflate(R.layout.fragment_login, container, false);
             this.loadAnimation(view);
-            this.btnLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    login(v);
-                }
-            });
+            this.btnLogin.setOnClickListener(new OnClickLogin(this.getContext(), this.loginActivity ,this.etEmail, this.etPassword));
          return  view;
     }
 
