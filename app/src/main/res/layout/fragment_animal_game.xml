@@ -39,28 +39,28 @@
         <soup.neumorphism.NeumorphButton
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Lion"
+          android:text="Loading"
           android:textAllCaps="true"
           android:id="@+id/option1"
           style="@style/Widget.Neumorph.Button"/>
         <soup.neumorphism.NeumorphButton
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Chien"
+          android:text="Loading"
           android:id="@+id/option2"
           android:textAllCaps="true"
           style="@style/Widget.Neumorph.Button"/>
         <soup.neumorphism.NeumorphButton
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Chat"
+          android:text="Loading"
           android:id="@+id/option3"
           android:textAllCaps="true"
           style="@style/Widget.Neumorph.Button"/>
         <soup.neumorphism.NeumorphButton
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Tigre"
+          android:text="Loading"
           android:textAllCaps="true"
           android:id="@+id/option4"
           style="@style/Widget.Neumorph.Button"/>
