@@ -107,15 +107,31 @@ class CategoryFragment : Fragment(), CategoryAdapter.ListItemClickListener {
             putExtra(IDENTIFICATION, id)
         }
         startActivity(intent)
-        showNotification()
+        showNotification(id)
     }
 
-    private fun showNotification() {
+    private fun showNotification(idCategory:String?) {
         val channelID ="1000"
         val notificationManager = this.activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val contentView = RemoteViews(this.activity?.packageName, R.layout.custom_notification_view)
-        contentView.setTextViewText(R.id.title_notif, "My notif")
-        contentView.setTextViewText(R.id.desc_notif, "desc notif")
+        if(idCategory.equals("6284efdfdaac815be2cbe1e0")) {
+            contentView.setTextViewText(R.id.title_notif, "Catégorie Pays")
+            contentView.setTextViewText(R.id.desc_notif, "Il y a du Quiz concernant les Pays et des vidéos pour bien apprendre les capitales des pays")
+        }
+        if(idCategory.equals("6284eededaac815be2cbe1dd")) {
+            contentView.setTextViewText(R.id.title_notif, "Catégorie Instrument de Musique")
+            contentView.setTextViewText(R.id.desc_notif, "Apprendre les types d'instruments de musiques dans la section vidéo et un jeu dans la section educational games")
+        }
+
+        if(idCategory.equals("6284efbddaac815be2cbe1de")) {
+            contentView.setTextViewText(R.id.title_notif, "Catégorie Animaux")
+            contentView.setTextViewText(R.id.desc_notif, "Jouez au jeu 'identifier l'animale' par son bruit. Des diverses vidéo aussi pour bien approfondir la connaissance")
+        }
+
+        if(idCategory.equals("6284efcfdaac815be2cbe1df")) {
+            contentView.setTextViewText(R.id.title_notif, "Catégorie Lettre & Nombre")
+            contentView.setTextViewText(R.id.desc_notif, "traduisez les nombres en lettre ou vice versa. Vidéo interessant concernant les lettres et nombres")
+        }
         val builder =
             this.activity?.let {
                 NotificationCompat.Builder(it.applicationContext, channelID)

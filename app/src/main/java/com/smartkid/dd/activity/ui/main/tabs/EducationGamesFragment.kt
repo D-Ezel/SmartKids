@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.smartkid.dd.R
 import com.smartkid.dd.activity.ui.category.IDENTIFICATION
+import kotlin.coroutines.EmptyCoroutineContext
 
 
 class EducationGamesFragment : Fragment() {
@@ -23,7 +24,7 @@ class EducationGamesFragment : Fragment() {
         } else if(id.equals("6284efbddaac815be2cbe1de")){
             //animaux
             inflater.inflate(R.layout.fragment_animal_game, container, false)
-            return AnimalGameFragment(this).onCreateView(inflater, container, null)
+            return AnimalGameFragment(EmptyCoroutineContext,this).onCreateView(inflater, container, null)
         } else if(id.equals("6284efcfdaac815be2cbe1df")){
             //number-letter
             return inflater.inflate(R.layout.fragment_letter_number, container, false)

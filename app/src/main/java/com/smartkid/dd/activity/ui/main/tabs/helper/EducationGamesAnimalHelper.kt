@@ -1,11 +1,11 @@
 package com.smartkid.dd.activity.ui.main.tabs.helper
 
 import android.media.SoundPool
-import com.smartkid.dd.activity.ui.main.tabs.models.Animal
+import com.smartkid.dd.activity.ui.main.tabs.models.Question
 
 class EducationGamesAnimalHelper {
     private var _id: String?
-    private var animalObj: ArrayList<Animal>
+    private var animalObj: ArrayList<Question>
     private var soundQuiz: SoundPool?
     private var response: String?
 
@@ -17,11 +17,11 @@ class EducationGamesAnimalHelper {
         this._id = value
     }
 
-    fun getAnimalObj(): ArrayList<Animal> {
+    fun getAnimalObj(): ArrayList<Question> {
         return this.animalObj
     }
 
-    fun setAnimalObj(value: ArrayList<Animal>) {
+    fun setAnimalObj(value: ArrayList<Question>) {
         this.animalObj = value
     }
 
@@ -41,7 +41,7 @@ class EducationGamesAnimalHelper {
         this.response = value
     }
 
-    constructor(_id: String?, animalObj: ArrayList<Animal>, soundQuiz: SoundPool?, response: String?) {
+    constructor(_id: String?, animalObj: ArrayList<Question>, soundQuiz: SoundPool?, response: String?) {
         this._id = _id
         this.animalObj = animalObj
         this.soundQuiz = soundQuiz
